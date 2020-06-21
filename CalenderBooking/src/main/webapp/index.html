@@ -1,0 +1,810 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  display: none;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  margin: 50px auto;
+  width: 640px;
+}
+ 
+.login {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  width: 310px;
+}
+
+
+
+.login p.submit {
+  text-align: right;
+}
+ 
+.login-help {
+  margin: 20px 0;
+  font-size: 11px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px #2a85a1;
+}
+ 
+.login-help a {
+  color: #cce7fa;
+  text-decoration: none;
+}
+ 
+.login-help a:hover {
+  text-decoration: underline;
+}
+ 
+:-moz-placeholder {
+  color: #c9c9c9 !important;
+  font-size: 13px;
+}
+ 
+::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 13px;
+}
+
+
+.container {
+  margin: 50px auto;
+  width: 640px;
+}
+.login:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+ 
+.login h1 {
+  margin: -20px -20px 21px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: #f3f3f3;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}
+ 
+.login p {
+  margin: 20px 0 0;
+}
+ 
+.login p:first-child {
+  margin-top: 0;
+}
+ 
+.login input[type=text], .login input[type=password] {
+  width: 278px;
+}
+ 
+.login p.remember_me {
+  float: left;
+  line-height: 31px;
+}
+ 
+.login p.remember_me label {
+  font-size: 12px;
+  color: #777;
+  cursor: pointer;
+}
+ 
+.login p.remember_me input {
+  position: relative;
+  bottom: 1px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+.container .box { 
+                width:800px; 
+                height:500px;
+                margin:50px; 
+                display:table; 
+            } 
+            .container .box .box-row { 
+                display:table-row; 
+            } 
+            .container .box .box-cell { 
+                display:table-cell; 
+                width:50%; 
+                padding:10px; 
+            } 
+            .container .box .box-cell.box1 { 
+                background:#4d4d00; 
+                color:white; 
+                text-align:justify; 
+             } 
+            .container .box .box-cell.box2 { 
+                background:#666600; 
+                text-align:justify 
+            } 
+            
+            
+            
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+
+
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+
+<body>
+
+<div id="logindiv" class="container">
+<div class="container">
+  <div class="login">
+    <h1>Login to Schedule booking</h1>
+    
+      <p><input type="text" name="username" id="username" value="" placeholder="Username or Email"></p>
+      <p><input type="password" name="userpass" id="userpass" value="" placeholder="Password"></p>
+      <p class="remember_me">
+        <label>
+          <input type="checkbox" name="remember_me" id="remember_me">
+          Remember me on this computer
+        </label>
+      </p>
+      <p class="submit">
+      	<button onclick = "login2()">Login</button>
+      </p>
+    
+  </div>
+ 
+  <div class="login-help">
+    <p>Forgot your password? Click here to reset it.</p>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 	<div id="logindiv">
+		<center>
+			Name:<input type="text" name="username" id="username"/><br/><br/>  
+			Password:<input type="password" name="userpass" id="userpass"/><br/><br/>  
+			<button onclick = "login2()">Login</button>
+		</center>
+	</div>	
+	 -->
+
+		<div id="myDIV" class="sidenav">
+			<div  id ="welcomeName"></div>
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <a id ='registerUser' onclick = "enableRegisterUserDetails()">Register New User</a>
+			  <a id ='createNewCalenderSchedule' onclick = "enableCreateNewCalenderScheduleDetails()">Create New Schedule</a>
+			  <a id ='bookCalenderSchedule' onclick = "enableBookCalenderSchedule()">Book Schedule</a>
+			  <a id ='myBookingList' onclick = "enableMyBookingList()">My Booking List</a>
+			  <a id ='changePassword' onclick = "enableChangePasswordDetails()">Change Password</a>
+			  
+			  <a id ='about' onclick = "enableAboutDetails()">About</a>
+			  <a id ='logout' onclick = "enableUserManual()">User Manual</a>
+			  <a id ='logout' onclick = "logout()">Logout</a>
+			  
+		</div>
+		
+		<Div id = "displayUserManual" class="container" >
+			<div class="login">
+				<h1>User manual</h1>
+			</div>
+		</Div>
+		<Div id = "registerUserDetails" class="container" >
+		<div class="login">
+			<h1>New User registration</h1>
+			
+				<p>User Name:<input type="text" name="newUserNameLogin" id="newUserNameLogin" placeholder="Username or Email"/></p>  
+				<p>Email:<input type="text" name="newUserEmail" id="newUserEmail" placeholder="Email Id"/></p>
+				<p>Address:<input type="text" name="newUserAddress" id="newUserAddress" placeholder="Postal Address"/></p>
+				<p>Name:<input type="text" name="newUserName" id="newUserName" placeholder="Name"/></p>
+				<p>Password:<input type="password" name="newUserPassword" id="newUserPassword" placeholder="Password"/></p>
+				<p>Repeat Password:<input type="password" name="newUserPassword2" id="newUserPassword2" placeholder="Repeat password"/></p>
+				<p><button onclick = "registerUserDtls()">Submit</button></p>
+				<p><button >Reset</button></p>
+				
+			
+			</div>
+		</Div>
+		
+		<Div id = "createNewCalenderScheduleDetails" class="container">
+			<div class="login">
+				<h1>Create new Schedule</h1>
+				
+					<p>Schedule Name:<input type="text" name="newScheduleName" id="newScheduleName" placeholder="Schedule name"/></p>
+					<p>Schedule Location:<input type="text" name="newScheduleLocation" id="newScheduleLocation" placeholder="Schedule Location"/></p>
+					<p>Date:<input type="date" name="newScheduleDate" id="newScheduleDate" placeholder="Date"/></p>
+					<p>Start Time:
+					<select name="scheduleStartTime" id="scheduleStartTime">
+						  <option value="00">00</option>
+						  <option value="01">01</option>
+						  <option value="02">02</option>
+						  <option value="03">03</option>
+						  <option value="04">04</option>
+						  <option value="05">05</option>
+						  <option value="06">06</option>
+						  <option value="07">07</option>
+						  <option value="08">08</option>
+						  <option value="09">09</option>
+						  <option value="10">10</option>
+						  <option value="11">11</option>
+						  <option value="12">12</option>
+						  <option value="13">13</option>
+						  <option value="14">14</option>
+						  <option value="15">15</option>
+						  <option value="16">16</option>
+						  <option value="17">17</option>
+						  <option value="18">18</option>
+						  <option value="19">19</option>
+						  <option value="20">20</option>
+						  <option value="21">21</option>
+						  <option value="22">22</option>
+						  <option value="23">23</option>
+						  <option value="24">24</option>
+					</select></p>
+					
+					
+					<p>End Time:
+					<select name="scheduleEndTime" id="scheduleEndTime">
+						  <option value="00">00</option>
+						  <option value="01">01</option>
+						  <option value="02">02</option>
+						  <option value="03">03</option>
+						  <option value="04">04</option>
+						  <option value="05">05</option>
+						  <option value="06">06</option>
+						  <option value="07">07</option>
+						  <option value="08">08</option>
+						  <option value="09">09</option>
+						  <option value="10">10</option>
+						  <option value="11">11</option>
+						  <option value="12">12</option>
+						  <option value="13">13</option>
+						  <option value="14">14</option>
+						  <option value="15">15</option>
+						  <option value="16">16</option>
+						  <option value="17">17</option>
+						  <option value="18">18</option>
+						  <option value="19">19</option>
+						  <option value="20">20</option>
+						  <option value="21">21</option>
+						  <option value="22">22</option>
+						  <option value="23">23</option>
+						  <option value="24">24</option>
+					</select>
+					</p>
+					</br>
+					</br>
+					
+					<p><button onclick = "createNewScheduleDetailsOnSystem()">Create</button></p>
+			</div>
+		</Div>
+		
+		
+		<Div id = "bookCalenderScheduleDetails" class="container" >
+		<div class="box"> 
+			<div class="box-row"> 
+				<div id ="temp1" class="box-cell box1" style = "margin-left: 20%;">
+					
+						<h1>Book schedule</h1>
+						<p>
+						Schedule Date:
+						</br><input type="date" name="newScheduleDateLoad" id="newScheduleDateLoad" placeholder="Schedule Date"/>
+						<button onclick = "loadScheduleDate()">Load</button>
+						<div id = "listOfBookCreated" style ="overflow-y: scroll;"></div>
+						
+						</p>
+					
+				</div>
+				<div id ="temp2" class="box-cell box2" width ="500px;" >
+						<h2>List of schedule</h2>
+						<div id = "listOfBookTimeSeries" style ="overflow-y: scroll;"></div>
+					
+				</div>
+			</div>
+			</div>
+		</Div>
+		
+		<Div id = "myBookingListDetails" class="container">
+			<div class="box">
+				<div class="box-row"> 
+					
+					<div id = "temp33" class="box-cell box1" style = "margin-left: 20%;">
+						<div id = "dispDtlsMy" style ="overflow-y: scroll;"></div>
+					</div>
+				</div>
+			</div>
+		</Div>
+<!-- 		
+		<Div id = "bookCalenderScheduleDetails2" class="container" >
+			<div class="login" >
+				<h1>Book schedule</h1>
+				<p>
+				Schedule Date:
+				</br><input type="date" name="newScheduleDateLoad" id="newScheduleDateLoad" placeholder="Schedule Date"/>
+				<button onclick = "loadScheduleDate()">Load</button>
+				
+				</p>
+			</div>
+		</Div> -->
+		
+		
+		<Div id = "changePasswordDetails" class="container">
+			<div class="login">
+			<h1>change Password</h1>
+			
+				<p>User Name:<input type="text" name="resetUserName" id="resetUserName" placeholder="User Name"/></p> 
+				<p>Password:<input type="password" name="resetPassword" id="resetPassword" placeholder="Password"/></p> 
+				<p>Repeat Password:<input type="password" name="resetPassword2" id="resetPassword2" placeholder="Repeat Password"/></p> 
+				<p>
+					<button onclick = "resetPassword()">Clear</button>
+					<button onclick = "resetPassword()">Reset password</button>
+				</p>
+			
+			</div>
+		</Div>
+		
+		<Div id = "aboutDetails" class="container">
+			<div class="login">
+			<h1>About</h1>
+			<p>Devlop By Parteek </br> DIT Instute of Technology</p>
+			</div>
+		</Div>
+		
+		
+</body>
+
+
+
+<script>
+var token ;
+var usrNsame;
+var dbUserName;
+var userSyatemId;
+var y = document.getElementById("myDIV");
+y.style.display = "none";
+
+function masterClearDiv(){
+	var registerUserDetails = document.getElementById("registerUserDetails");
+	registerUserDetails.style.display = "none"; 
+
+	var createNewCalenderScheduleDetails = document.getElementById("createNewCalenderScheduleDetails");
+	createNewCalenderScheduleDetails.style.display = "none";
+
+	var aboutDetails = document.getElementById("aboutDetails");
+	aboutDetails.style.display = "none";
+
+	var changePasswordDetails = document.getElementById("changePasswordDetails");
+	changePasswordDetails.style.display = "none";
+	
+	var bookCalenderScheduleDetails = document.getElementById("bookCalenderScheduleDetails");
+	bookCalenderScheduleDetails.style.display = "none";
+	
+	var bookingListDetails = document.getElementById("myBookingListDetails");
+	bookingListDetails.style.display = "none";
+	
+	var displayUserManual = document.getElementById("displayUserManual");
+	displayUserManual.style.display = "none";
+}
+masterClearDiv();
+
+
+
+
+
+function enableRegisterUserDetails(){
+	masterClearDiv();
+	var aboutDetails = document.getElementById("registerUserDetails");
+	aboutDetails.style.display = "block";
+}
+
+function enableCreateNewCalenderScheduleDetails(){
+	masterClearDiv();
+	var aboutDetails = document.getElementById("createNewCalenderScheduleDetails");
+	aboutDetails.style.display = "block";
+}
+
+function enableUserManual(){
+	masterClearDiv();
+	var aboutDetails = document.getElementById("displayUserManual");
+	aboutDetails.style.display = "block";
+}
+function enableAboutDetails(){
+	masterClearDiv();
+	var aboutDetails = document.getElementById("aboutDetails");
+	aboutDetails.style.display = "block";
+}
+
+function enableChangePasswordDetails(){
+	masterClearDiv();
+	var aboutDetails = document.getElementById("changePasswordDetails");
+	aboutDetails.style.display = "block";
+}
+function enableMyBookingList(){
+	masterClearDiv();
+	var aboutDetails = document.getElementById("myBookingListDetails");
+	aboutDetails.style.display = "block";
+	loadMyScheduleBookings();
+}
+
+
+function enableBookCalenderSchedule(){
+	masterClearDiv();
+	var aboutDetails = document.getElementById("bookCalenderScheduleDetails");
+	aboutDetails.style.display = "block";
+}
+
+function logout(){
+	
+	masterClearDiv();
+	var y = document.getElementById("myDIV");
+	y.style.display = "none";
+	
+	var x = document.getElementById("logindiv");
+	x.style.display = "block";
+	
+}
+
+ function loadScheduleDateDataToGrid(testData){
+	//div id = "listOfBookCreated"></div>
+	//var testData =JSON.parse('[{ "id" : 45445, "scheduleName":"Result announcement", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"} ,{ "id" : 897745, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"},{ "id" : 8945, "scheduleName":"Result announcement 2", "scheduleLocation":"Meeting Room", "Date":"30-05-2020"}]');
+	var dispString ="</br>";
+	for (var x = 0; x<testData.length;x++) {
+		dispString = dispString+ "<p> <button onclick = 'loadTimeSeriesData(this)'>"+testData[x]['scheduleId'] + "</button> &nbsp &nbsp" +testData[x]['scheduleName']+" </p>";
+		}
+	 document.getElementById("listOfBookCreated").innerHTML = dispString;
+} 
+
+function genrateClickEventForSchedule(testData){
+/* 	var str = x.innerText;
+	var testData = loadTimeSeriesData(str); */
+	//var testData = JSON.parse('[{"id":456, "stime":11 ,"etime":12,"status":"book"},{"id":456, "stime":12,"etime":13,"status":"free"},{"id":456, "stime":13,"etime":14,"status":"book"}]')
+	//scheduleId
+	var gridBookingString ="";
+	for (var x = 0; x<testData.length;x++) {
+		//gridBookingString = gridBookingString + "<tr><td>"   + "</td>"  + "<td>" +testData[x]['etime'] + "</td>" + "<td>";
+		
+		if(testData[x]['status']=="book"){
+			//gridBookingString = gridBookingString + "<td style = 'color :green;'>" + "<p> <button class='button button3' onclick = 'bookScheduleTimeSeries(this)'>" +testData[x]['status'] + "</button></p></td></tr>";
+			gridBookingString = gridBookingString + "<p> <button class='button button3' onclick = 'bookScheduleTimeSeries2(this," +testData[x]['id'] +","+testData[x]['scheduleId'] + " )'>"  +testData[x]['stime']+ " To " +testData[x]['etime'] + " Already Book Schedule "+"</button></p>";
+			//gridBookingString = gridBookingString + "<p> <button class='button' button3 onclick = 'bookScheduleTimeSeries(this," +testData[x]['id'] + " )'>"  +testData[x]['stime']+ " To " +testData[x]['etime'] + " Click and Book Schedule "+ "</button></p>";
+			}else{
+				//gridBookingString = gridBookingString + "<td style = 'color :green;'>" + "<p> <button class='button' onclick = 'bookScheduleTimeSeries(this)'>" +testData[x]['status'] + "</button></p></td></tr>";
+				gridBookingString = gridBookingString + "<p> <button class='button' onclick = 'bookScheduleTimeSeries(this," +testData[x]['id'] +","+testData[x]['scheduleId'] + " )'>"  +testData[x]['stime']+ " To " +testData[x]['etime']+ " Click and Book Schedule "+ "</button></p>";
+			}
+		}
+	
+	document.getElementById("listOfBookTimeSeries").innerHTML = gridBookingString;
+}
+
+function displayMyScheduleBooking(result){
+	var myDispDtls ="<table><tr><th>ID</th><th>Schedule ID</th><th>Schedule Name</th><th>Start Time</th><th>End Time</th><th>Date</th><th>User Name</th></tr><tr>";
+	
+	//dispDtlsMy
+	
+	for (var x = 0; x<result.length;x++) {
+		myDispDtls = myDispDtls +"<td>" + result[x]['id'] +"</td>" +"<td>" + result[x]['scheduleId'] +"</td>" +"<td>" + result[x]['scheduleName'] +"<td>" + result[x]['startTime'] +"</td>" +"<td>" + result[x]['endTime'] +"</td>" +"<td>" + result[x]['creationDate'] +"</td>" + "<td>" + result[x]['userName'] +"</td></tr>";
+		}
+	myDispDtls = myDispDtls +"</table>";
+	document.getElementById("dispDtlsMy").innerHTML = myDispDtls;
+}
+function bookScheduleTimeSeries2(x,id,scheduleId){
+	alert("Schedule already Book Please Chosoe some other Schedule")
+}
+function bookScheduleTimeSeries(x,id,scheduleId){
+	//timeScheduleId, timeScheduleId, scheduleName, startTime, endTime, userName, creationDate
+	var str = x.innerText;
+	var res = str.split(" ");
+	var stime = res[0];
+	var etime = res[2];
+	bookMyTimeSeriesSchedule(id,scheduleId,stime,etime);
+	//alert(stime +" " + etime + " " +id + " " +scheduleId);
+}
+
+/* function login(){
+	var usr = document.getElementById("username").value;
+	var pass = document.getElementById("userpass").value;
+	
+	$.ajax({url: "http://localhost:8080/JAXRSJsonExample/rest/countries", success: function(result){
+	      alert (result[0].countryName);
+	    }});
+} */
+
+function login2(){
+	var urllog = "http://localhost:8080/CalenderBooking/rest/login";
+	var usr = document.getElementById("username").value;
+	var pass = document.getElementById("userpass").value;
+	var fd = new FormData(); 
+	$.ajax({
+	    type: 'POST',
+	    url: urllog,
+	    data :{param1: usr, param2: pass},
+	    success: function(result){
+	    	//loginSucessDiv(result);
+	    	 if(result[0].status=='sucess'){
+	    	//alert(result[0].token)
+	    		loginSucessDiv(result);
+	    	}else{
+	    		alert(result[0].data);
+	    	} 
+	    	
+	    }
+	})
+}
+function registerUserDtls(){
+	
+	
+	var urllog = "http://localhost:8080/CalenderBooking/rest/registerUser";
+	var newUserNameLogin = document.getElementById("newUserNameLogin").value;
+	var newUserEmail = document.getElementById("newUserEmail").value;
+	var newUserAddress = document.getElementById("newUserAddress").value;
+	var newUserName = document.getElementById("newUserName").value;
+	var newUserPassword = document.getElementById("newUserPassword").value;
+	
+	
+	$.ajax({
+	    type: 'POST',
+	    url: urllog,
+	    data :{userName: newUserNameLogin, eamil: newUserEmail,address: newUserAddress, name: newUserName, password: newUserPassword, usrType: "normal"},
+	    success: function(result){
+	    	alert(result);
+	    	clearRegisterUserDtls();
+	    }
+	})
+	
+	
+}
+function createNewScheduleDetailsOnSystem(){
+	
+	
+	var urllog = "http://localhost:8080/CalenderBooking/rest/createSchedule";
+	
+	var newScheduleNameTmp = document.getElementById("newScheduleName").value;
+	var newScheduleLocationTmp = document.getElementById("newScheduleLocation").value;
+	var newScheduleDateTmp = document.getElementById("newScheduleDate").value;
+	var scheduleStartTimeTmp = document.getElementById("scheduleStartTime").value;
+	var scheduleEndTimeTmp = document.getElementById("scheduleEndTime").value;
+	
+		
+	$.ajax({
+	    type: 'POST',
+	    url: urllog,
+	    data :{scheduleName: newScheduleNameTmp, scheduleLocation: newScheduleLocationTmp,creationDate: newScheduleDateTmp, startTime: scheduleStartTimeTmp, endTime: scheduleEndTimeTmp, userName: dbUserName},
+	    success: function(result){
+	    	alert(result);
+	    	clearCreateNewScheduleDetailsOnSystem();
+	    	
+	    }
+	})
+	
+}
+
+function loadScheduleDate(){
+	
+	var urllog = "http://localhost:8080/CalenderBooking/rest/loadScheduleByDate";
+		
+		var newScheduleDateLoad = document.getElementById("newScheduleDateLoad").value;
+		
+		$.ajax({
+		    type: 'POST',
+		    url: urllog,
+		    data :{creationDate: newScheduleDateLoad},
+		    success: function(result){
+		    	if(result.length>0){
+		    		loadScheduleDateDataToGrid(result);
+		    	}else{
+		    		alert("Record Not found in selected Date");
+		    		loadScheduleDateDataToGrid(result);
+		    	}
+		    }
+		    	
+		})
+}
+
+function loadMyScheduleBookings(){
+	
+	var urllog = "http://localhost:8080/CalenderBooking/rest/loadMyBookingDetails";
+		
+		var newScheduleDateLoad = document.getElementById("newScheduleDateLoad").value;
+		
+		$.ajax({
+		    type: 'POST',
+		    url: urllog,
+		    data :{userID: dbUserName},
+		    success: function(result){
+		    	if(result.length>0){
+		    		displayMyScheduleBooking(result);
+		    	}else{
+		    		alert("Record Not found in selected Date");
+		    		displayMyScheduleBooking(result);
+		    	}
+		    }
+		    	
+		})
+}
+
+function loadTimeSeriesData(seriesId){
+	var str = seriesId.innerText;
+	
+	var urllog = "http://localhost:8080/CalenderBooking/rest/loadTimeSeriesById";
+		
+		$.ajax({
+		    type: 'POST',
+		    url: urllog,
+		    data :{id: str},
+		    success: function(result){
+		    	genrateClickEventForSchedule(result);
+		    }
+		    	
+		})
+}
+function bookMyTimeSeriesSchedule(id,sId,stime,etime){
+	
+	var urllog = "http://localhost:8080/CalenderBooking/rest/createMySchedule";
+		
+		$.ajax({
+		    type: 'POST',
+		    url: urllog,
+		    data :{scheduleId: sId, tsScheduleID: id, startTime: stime, endTime: etime,userName: dbUserName},
+		    success: function(result){
+		    	alert(result);
+		    }
+		    	
+		})
+}
+function clearCreateNewScheduleDetailsOnSystem(){
+	
+	document.getElementById("newScheduleName").value ="";
+	document.getElementById("newScheduleLocation").value ="";
+	document.getElementById("newScheduleDate").value ="";
+	document.getElementById("scheduleStartTime").value="00";
+	document.getElementById("scheduleEndTime").value="00";
+}
+function clearRegisterUserDtls(){
+	document.getElementById("newUserNameLogin").value = "";
+	document.getElementById("newUserEmail").value = "";
+	document.getElementById("newUserAddress").value = "";
+	document.getElementById("newUserName").value = "";
+	document.getElementById("newUserPassword").value = "";
+	document.getElementById("newUserPassword2").value = "";
+}
+function loginSucessDiv(result) {
+	  var x = document.getElementById("logindiv");
+	  var y = document.getElementById("myDIV");
+	    x.style.display = "none";
+	    y.style.display = "block";
+	    
+	    token =result[0].token;
+	    usrNsame =result[0].usrNsame;
+	    dbUserName =result[0].userName;
+	    userSyatemId =result[0].userSyatemId;
+	    //{token: "gjsagfgsjafgjasgfjagsfafasfa", status: "sucess", data: "Sucessfully Login", usrNsame: "aa", userType: "normal", …}
+	    
+	    document.getElementById("welcomeName").value = "Welcome " + usrNsame;
+	    
+	}
+</script>
+</html>
