@@ -1,6 +1,5 @@
 # CalenderSlotBooking
-1.About us
-![Test Image 1](SnapShot/AboutUs.png)
+
 2.Create user
 ![Test Image 2](SnapShot/RegisterNewUser.png)
 3.Login
